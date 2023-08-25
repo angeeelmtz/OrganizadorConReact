@@ -2,23 +2,12 @@ import "./Equipo.css"
 import Colaborador from "../Colaborador"
 
 const Equipo = (props) =>{
-    //Destructuracion
-    /*
-    const titulo = props.datos.titulo
-    const colorPrimario = props.datos.colorPrimario
-    const colorSecundario = props.datos.colorSecundario
-    */
+
     const {colorPrimario, colorSecundario, titulo} = props.datos
     const colorFondo = { backgroundColor: colorSecundario}
     const bordeTitulo = { borderColor: colorPrimario}
-
+    const {eliminarColaborador} = props
     const {colaboradores} = props
-
-    /* 
-        style={ { backgroundColor: props.datos.color } }
-        style= {colorSecundario}
-    
-    */
 
     return <>
         { colaboradores.length > 0 && 
@@ -30,6 +19,7 @@ const Equipo = (props) =>{
                             datos={colaborador} 
                             key={idx}
                             colorPrimario={colorPrimario}
+                            eliminarColaborador={eliminarColaborador}
                         />)
                     }
                 </div>

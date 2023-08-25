@@ -8,17 +8,44 @@ import Footer from './components/Footer';
 
 function App() {
 
-  //El hook se declara antes del return
   const [mostrarFormulario, actualizarMostrar] = useState(true)
   const [colaboradores, actualizarColaboradores] = useState([{
+    equipo: "Programación",
+    imagen: "https://github.com/angeeelmtz.png",
+    nombre: "Angel Martinez",
+    puesto: "FrontEnd Developer"
+  },
+
+  {
+    equipo: "Programación",
+    imagen: "https://github.com/angeeelmtz.png",
+    nombre: "Angel Martinez",
+    puesto: "FrontEnd Developer"
+  },
+
+  {
     equipo: "Front End",
     imagen: "https://github.com/angeeelmtz.png",
     nombre: "Angel Martinez",
     puesto: "FrontEnd Developer"
-  }])
-  
-  //Ternario => condicion ? seMuestra : noSeMuestra
-  // condicion && seMuestra
+  },
+
+  {
+    equipo: "UX y Diseño",
+    imagen: "https://github.com/angeeelmtz.png",
+    nombre: "Angel Martinez",
+    puesto: "FrontEnd Developer"
+  },
+
+  {
+    equipo: "Innovación y Gestión",
+    imagen: "https://github.com/angeeelmtz.png",
+    nombre: "Angel Martinez",
+    puesto: "FrontEnd Developer"
+  }
+
+
+])
 
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario)
@@ -67,12 +94,13 @@ function App() {
     }
   ]
 
+  const eliminarColaborador = () => {
+    console.log("Eliminar Colaborador");
+  }
+
   return (
     <div className="App">
       <Header />
-      
-      {/* { mostrarFormulario === true ? <Formulario /> : <div/>} */}
-      {/* { mostrarFormulario ? <Formulario /> : <></>} */}
 
       {mostrarFormulario && <Formulario 
         equipos={equipos.map((equipo) => equipo.titulo)} 
@@ -85,6 +113,7 @@ function App() {
         key={equipo.titulo} 
         datos={equipo} 
         colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
+        eliminarColaborador={eliminarColaborador}
         />
         )
       }
