@@ -12,7 +12,10 @@ const Formulario = (props) => {
     const [imagen, actualizarImagen] = useState("")
     const [equipo, actualizarEquipo] = useState("")
 
-    const {registrarColaborador} = props
+    const [titulo, setTitulo] = useState("")
+    const [color, setColor] = useState("")
+
+    const {registrarColaborador, crearEquipo} = props
 
     const manejarEnvio = (evento) => {
         evento.preventDefault();
@@ -25,7 +28,30 @@ const Formulario = (props) => {
         registrarColaborador(datosAEnviar);
     }
 
+    const manejarEquipo = (evento) => {
+        evento.preventDefault();
+        crearEquipo({titulo, colorPrimario: color});
+    }
+
     return <section className="formulario">
+        <form className="form" onSubmit={manejarEquipo}>
+            <h2>Rellena el formulario para crear el Equipo.</h2>
+            <CampotTexto 
+                titulo="Titulo" 
+                placeholder="Ingresar titulo" 
+                required={true} 
+                valor={titulo}
+                actualizarValor={setTitulo}
+            />
+            <CampotTexto 
+                titulo="Color" 
+                placeholder="Ingresar color en Hex"
+                required 
+                valor={color}
+                actualizarValor={setColor}
+            />
+            <Boton texto="Nuevo equipo"/>
+        </form>
         <form onSubmit={manejarEnvio}>
             <h2>Rellena el formulario para crear el colaborador.</h2>
             <CampotTexto 
@@ -34,14 +60,14 @@ const Formulario = (props) => {
                 required={true} 
                 valor={nombre}
                 actualizarValor={actualizarNombre}
-                />
+            />
             <CampotTexto 
                 titulo="Puesto" 
                 placeholder="Ingresar puesto"
                 required 
                 valor={puesto}
                 actualizarValor={actualizarPuesto}
-                />
+            />
             <CampotTexto 
                 titulo="Foto" 
                 placeholder="Ingresar enlace de foto" 

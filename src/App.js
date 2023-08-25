@@ -105,8 +105,10 @@ function App() {
     }
   ]) 
 
-  const eliminarColaborador = () => {
-    console.log("Eliminar Colaborador");
+  const eliminarColaborador = (id) => {
+    console.log("Eliminar Colaborador", id);
+    const nuevoColaborador = colaboradores.filter((colaborador) => colaborador.id !== id)
+    actualizarColaboradores(nuevoColaborador);
   }
 
   const actualizarColor = (color, id) => {
@@ -120,6 +122,11 @@ function App() {
     setEquipos(equiposActualizado);
   }
 
+  const crearEquipo = (nuevoEquipo) => {
+    console.log(nuevoEquipo);
+    setEquipos([...equipos, {...nuevoEquipo, id: uuid()}])
+  }
+
   return (
     <div className="App">
       <Header />
@@ -127,6 +134,7 @@ function App() {
       {mostrarFormulario && <Formulario 
         equipos={equipos.map((equipo) => equipo.titulo)} 
         registrarColaborador={registrarColaborador}
+        crearEquipo={crearEquipo}
         />
       } 
 
