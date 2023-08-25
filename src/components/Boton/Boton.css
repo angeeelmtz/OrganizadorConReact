@@ -1,0 +1,31 @@
+:root{
+    --montserrat: 'Montserrat', sans-serif;
+    --prata: 'Prata', serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.boton{
+    border: 0;
+    padding: 15px 40px;
+    outline: none;
+    color: #FFF;
+    text-align: center;
+    font-family: var(--montserrat);
+    cursor: pointer;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 10px;
+    background: #6278F7;
+    margin-bottom: 30px;
+}
+
+.boton:hover{
+    color: #95FFD4;;
+}

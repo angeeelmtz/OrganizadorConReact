@@ -1,0 +1,10 @@
+:root{
+    --montserrat: 'Montserrat', sans-serif;
+    --prata: 'Prata', serif;
+}
+
+.footer{
+    width: 100%;
+    height: 200px;
+    background-image: url("/public/img/Footer.png");
+}

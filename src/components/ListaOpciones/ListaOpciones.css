@@ -1,0 +1,38 @@
+:root{
+    --montserrat: 'Montserrat', sans-serif;
+    --prata: 'Prata', serif;
+}
+
+.lista-opciones label{
+    display: block;
+    color: #212121;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 8px;
+}
+
+.lista-opciones select{
+    border: 0;
+    width: 100%;
+    padding: 30px 20px;
+    background: #FFF;
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
+    color: #AFAFAF;
+    font-family: var(--montserrat);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 30px;
+}
+
+.lista-opciones select option{
+    color: #000;
+}
+
+.lista-opciones select:focus{
+    outline: 3px solid #6278F7;
+}

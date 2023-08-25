@@ -1,0 +1,40 @@
+:root{
+    --montserrat: 'Montserrat', sans-serif;
+    --prata: 'Prata', serif;
+}
+
+
+.campo-texto{
+    margin: 24px 0;
+    font-family: var(--montserrat);
+}
+
+.campo-texto label{
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: #212121;
+    font-style: normal;
+    line-height: normal;
+}
+
+.campo-texto input{
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border: none;
+    padding: 30px 20px;
+    background: #FFF;
+    color: #A4A4A4;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-family: var(--montserrat);
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+}
+
+.campo-texto input:focus{
+    outline: 3px solid #6278F7;
+}

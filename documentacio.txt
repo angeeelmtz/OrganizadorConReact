@@ -1,0 +1,18 @@
+Como primer punto importante y tener un conocimiento basico de react es que debe exister en nuestro index.html un elementId
+que este identificado como 'root', para asi tener una comunicacion entre los componentes que vayamos creando y nuestra pagina 
+web de nuestro proyecto
+
+En index.js hacemos las importanciones o las llamadas a el framework y otro tipo de componentes para poner trabajar en conjunto.
+existe un metodo llamado render() que este se le pasan etiquetas o componentes como si fueran etiquetas html 
+
+La estructura y la composicion de nuestro sitio web es que cada elemento que tengamos en la carpeta src como esta fue vinculado
+por medio del elemento root de la carpeta public se le van a poder inyectar cualquier tipo de componentes
+
+En react no es necesario tener que desplazarse con puntos o con las barras para acceder a elementos para ello solamente necesitamos
+colocar el nombre de la carperta seguido del nombre del elemento ya sea una imagen, css, html, etc
+
+Para que nosotros podamos crear un componente que vayamos a utilizar en nuestro proyecto hecho con react debemos retornarlo como
+si este fue un elemento de HTML. Para que podamos usar nuestro compenente en la estructura de nuestro sitio web usamos la function
+1. export default "nombre de la funcion a exportar";
+
+Para que podamos mandar a llamar nuestro componente utilizamos el metodo import seguido del nombre del compenente
