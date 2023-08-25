@@ -13,6 +13,7 @@
     width: 100%;
     padding: 32px;
     text-align: center;
+    position: relative;
 }
 
 .equipo h2{
@@ -33,4 +34,10 @@
 .colaboradores{
     display: flex;
     justify-content: space-evenly;
+}
+
+.input-Color{
+    top: 50px;
+    right: 50px;
+    position: absolute;
 }

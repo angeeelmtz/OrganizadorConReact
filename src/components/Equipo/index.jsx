@@ -12,7 +12,18 @@ const Equipo = (props) =>{
     return <>
         { colaboradores.length > 0 && 
             <section className="equipo" style={colorFondo}>
+                
+                <input 
+                    type="color" 
+                    className="input-Color"
+                    value={colorPrimario}
+                    onChange={(evento) => {
+                        console.log(evento.target.value);
+                    }}
+                />
+
                 <h2 style={bordeTitulo}>{titulo}</h2>
+                
                 <div className="colaboradores">
                     {
                         colaboradores.map((colaborador, idx) => <Colaborador 
