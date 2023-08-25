@@ -12,17 +12,19 @@ function App() {
   const [colaboradores, actualizarColaboradores] = useState([{
     id: uuid(),
     equipo: "Programación",
-    imagen: "https://github.com/angeeelmtz.png",
-    nombre: "Angel Martinez",
-    puesto: "FrontEnd Developer"
+    imagen: "https://github.com/harlandlohora.png",
+    nombre: "Harland Lohora",
+    puesto: "Instructora en Alura Latam",
+    fav: false
   },
 
   {
     id: uuid(),
     equipo: "Programación",
-    imagen: "https://github.com/angeeelmtz.png",
-    nombre: "Angel Martinez",
-    puesto: "FrontEnd Developer"
+    imagen: "https://github.com/christianpva.png",
+    nombre: "Christian Velasco",
+    puesto: "Head de Alura e instructor",
+    fav: false
   },
 
   {
@@ -30,23 +32,26 @@ function App() {
     equipo: "Front End",
     imagen: "https://github.com/angeeelmtz.png",
     nombre: "Angel Martinez",
-    puesto: "FrontEnd Developer"
+    puesto: "FrontEnd Developer",
+    fav: true
   },
 
   {
     id: uuid(),
     equipo: "UX y Diseño",
-    imagen: "https://github.com/angeeelmtz.png",
-    nombre: "Angel Martinez",
-    puesto: "FrontEnd Developer"
+    imagen: "https://github.com/JeanmarieAluraLatam.png",
+    nombre: "Jeanmarie Quijada",
+    puesto: "Instructora en Alura Latam",
+    fav: false
   },
 
   {
     id: uuid(),
-    equipo: "Innovación y Gestión",
-    imagen: "https://github.com/angeeelmtz.png",
-    nombre: "Angel Martinez",
-    puesto: "FrontEnd Developer"
+    equipo: "Deveops",
+    imagen: "https://github.com/JoseDarioGonzalezCha.png",
+    nombre: "Jose Gonzalez",
+    puesto: "Dev. FullStack",
+    fav: false
   }
 
 
@@ -127,6 +132,16 @@ function App() {
     setEquipos([...equipos, {...nuevoEquipo, id: uuid()}])
   }
 
+  const meGusta = (id) => {
+    const colaboradorLike = colaboradores.map((colaborador) => {
+      if (colaborador.id === id) {
+        colaborador.fav = !colaborador.fav
+      }
+      return colaborador
+    })
+    actualizarColaboradores(colaboradorLike)
+  }
+
   return (
     <div className="App">
       <Header />
@@ -145,6 +160,7 @@ function App() {
         colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
         eliminarColaborador={eliminarColaborador}
         actualizarColor={actualizarColor}
+        meGusta={meGusta}
         />
         )
       }
